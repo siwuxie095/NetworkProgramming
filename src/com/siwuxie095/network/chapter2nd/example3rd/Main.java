@@ -85,7 +85,7 @@ public class Main {
      *
      * 回顾服务器实现中的重要步骤，可以得出服务器的主要代码组件：
      * （1）EchoServerHandler 实现了业务逻辑；
-     * （2）main() 方法引导了服务器；
+     * （2）start() 方法引导了服务器；
      *
      * 引导过程中所需要的步骤如下：
      * （1）创建一个 ServerBootstrap 的实例以引导和绑定服务器；

@@ -23,22 +23,6 @@ public class EchoServer {
         this.port = port;
     }
 
-    /**
-     * 可以 Configuration 的 Program arguments 中设置参数作为 main 方法运行所需参数。
-     *
-     * 这里 main 方法运行所需参数实际上是用作端口，比如设置为 8000。
-     */
-    public static void main(String[] args) throws Exception {
-        if (args.length != 1) {
-            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
-            return;
-        }
-        // 设置端口值（如果端口参数的格式不正确，则抛出一个 NumberFormatException ）
-        int port = Integer.parseInt(args[0]);
-        // 调用服务器的 start() 方法
-        new EchoServer(port).start();
-    }
-
     public void start() throws Exception {
         final EchoServerHandler serverHandler = new EchoServerHandler();
         // (1) 创建 EventLoopGroup
@@ -71,6 +55,22 @@ public class EchoServer {
             // (8) 关闭 EventLoopGroup，释放所有的资源
             group.shutdownGracefully().sync();
         }
+    }
+
+    /**
+     * 可以 Configuration 的 Program arguments 中设置参数作为 main 方法运行所需参数。
+     *
+     * 这里 main 方法运行所需参数实际上是用作端口，比如设置为 8000。
+     */
+    public static void main(String[] args) throws Exception {
+        if (args.length != 1) {
+            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
+            return;
+        }
+        // 设置端口值（如果端口参数的格式不正确，则抛出一个 NumberFormatException ）
+        int port = Integer.parseInt(args[0]);
+        // 调用服务器的 start() 方法
+        new EchoServer(port).start();
     }
 }
 
