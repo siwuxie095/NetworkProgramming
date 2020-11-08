@@ -52,6 +52,9 @@ public class Main {
      * 为此，Netty 提供了 ChannelFuture接口，其 addListener() 方法注册了一个 ChannelFutureListener，以便在某个操作
      * 完成时（无论是否成功）得到通知。
      *
+     *
+     * 关于 ChannelFuture 的更多讨论：
+     *
      * 可以将 ChannelFuture 看作是将来要执行的操作的结果的占位符。它究竟什么时候被执行则可能取决于若干的因素，因此不可能
      * 准确地预测，但是可以肯定的是它将会被执行。此外，所有属于同一个 Channel 的操作都被保证其将以它们被调用的顺序被执行。
      */
