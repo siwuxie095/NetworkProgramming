@@ -1,35 +1,33 @@
-package com.siwuxie095.network.chapter4th.example2nd;
+package com.siwuxie095.network.chapter4th.example4th;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
-import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
 /**
- * 使用 Netty 的异步网络编程
- *
  * @author Jiajing Li
- * @date 2020-11-09 08:06:01
+ * @date 2020-11-10 20:20:51
  */
 @SuppressWarnings("all")
-public class NettyNioServer {
+public class NettyEpollServer {
 
     public void serve(int port) throws Exception {
         final ByteBuf buf =
                 Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi!\r\n",
                         Charset.forName("UTF-8")));
-        // 为非阻塞模式使用 NioEventLoopGroup
-        NioEventLoopGroup group = new NioEventLoopGroup();
+        // 为非阻塞模式使用 EpollEventLoopGroup
+        EpollEventLoopGroup group = new EpollEventLoopGroup();
         try {
             // 创建 ServerBootstrap
             ServerBootstrap b = new ServerBootstrap();
-            b.group(group).channel(NioServerSocketChannel.class)
+            b.group(group).channel(EpollServerSocketChannel.class)
                     .localAddress(new InetSocketAddress(port))
                     // 指定 ChannelInitializer，对于每个已接受的连接都调用它
                     .childHandler(new ChannelInitializer<SocketChannel>() {
@@ -55,5 +53,6 @@ public class NettyNioServer {
         }
     }
 }
+
 
 
