@@ -24,6 +24,8 @@ public class Main {
      * （8）支持池化。
      *
      * 其他类可用于管理 ByteBuf 实例的分配，以及执行各种针对于数据容器本身和它所持有的数据的操作。
+     *
+     * PS：ByteBuf 类，即为 Netty 的数据容器。
      */
     public static void main(String[] args) {
 
