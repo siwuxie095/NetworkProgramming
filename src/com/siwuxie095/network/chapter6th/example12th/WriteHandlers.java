@@ -30,7 +30,7 @@ public class WriteHandlers {
      * 通过 ChannelHandlerContext 访问 ChannelPipeline
      */
     public static void writeViaChannelPipeline() {
-        //get reference from somewhere
+        // get reference from somewhere
         ChannelHandlerContext ctx = CHANNEL_HANDLER_CONTEXT_FROM_SOMEWHERE;
         // 获取到与 ChannelHandlerContext 相关联的 ChannelPipeline 的引用
         ChannelPipeline pipeline = ctx.pipeline();
