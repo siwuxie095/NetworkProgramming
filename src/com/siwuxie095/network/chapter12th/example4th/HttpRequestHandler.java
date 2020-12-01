@@ -29,7 +29,7 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
                 .getProtectionDomain()
                 .getCodeSource().getLocation();
         try {
-            String path = location.toURI() + "index.html";
+            String path = location.toURI() + "com/siwuxie095/network/chapter12th/example4th/index.html";
             path = !path.contains("file:") ? path : path.substring(5);
             INDEX = new File(path);
         } catch (URISyntaxException e) {
