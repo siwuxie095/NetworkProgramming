@@ -77,7 +77,7 @@ public class LogEventBroadcaster {
     /**
      * 可以 Configuration 的 Program arguments 中设置参数作为 main 方法运行所需参数。
      *
-     * 这里 main 方法运行所需参数实际上是用作端口和文件路径，比如设置为 8888 /var/log/system.log。
+     * 这里 main 方法运行所需参数实际上是用作端口和文件路径，比如设置为 8000 /var/log/system.log。
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
