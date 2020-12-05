@@ -24,6 +24,8 @@ public class Main {
      * 及速率限制成为了可能，所有的这一切都对业务具有显著的影响。
      *
      * Netty 使得通过少量的 Scala 代码便可以拦截所有的入站消息和出站消息并且统计字节数成为了可能。
+     *
+     * 另外：部分摘要代码，可参考 PDF。
      */
     public static void main(String[] args) {
 
