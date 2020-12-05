@@ -45,6 +45,8 @@ public class Main {
      * 在 Urban Airship，在所有和众多的包括 APNS 以及 Google 的 GCM 的第三方推送通知服务的连接中，Netty 都
      * 扮演了重要的角色。在每种情况下，Netty 都足够灵活，允许显式地控制从更高级别的 HTTP 的连接行为到基本的套接
      * 字级别的配置（如 TCP keep-alive 以及套接字缓冲区大小）的集成如何生效。
+     *
+     * 另外：部分摘要代码，可参考 PDF。
      */
     public static void main(String[] args) {
 
